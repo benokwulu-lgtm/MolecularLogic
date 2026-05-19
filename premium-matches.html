@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SweatSync Dating match dashboard for fitness-minded connections">
+    <meta name="theme-color" content="#9c2f4a">
+    <title>SweatSync Dating - Match Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="dashboard-page">
+    <main class="dashboard-frame">
+        <aside class="sidebar">
+            <a class="brand-lockup" href="index.html" aria-label="Return to onboarding">
+                <span class="brand-mark small" aria-hidden="true">
+                    <span class="plate"></span>
+                    <span class="bar"></span>
+                    <span class="heart"></span>
+                    <span class="bar"></span>
+                    <span class="plate"></span>
+                </span>
+                <span>
+                    <span class="eyebrow">Fitness dating</span>
+                    <strong>SweatSync</strong>
+                </span>
+            </a>
+
+            <div class="user-card">
+                <div class="avatar large" id="profileInitial">G</div>
+                <div>
+                    <strong id="memberAlias">Guest Lifter</strong>
+                    <span id="memberLevel">Dedicated duo</span>
+                </div>
+            </div>
+
+            <nav class="dashboard-nav" aria-label="Dashboard sections">
+                <button class="nav-btn active" data-section="matches">Matches</button>
+                <button class="nav-btn" data-section="messages">Messages</button>
+                <button class="nav-btn" data-section="profile">Profile</button>
+                <button class="nav-btn" data-section="settings">Settings</button>
+            </nav>
+
+            <button id="logoutBtn" type="button" class="secondary-action">Logout</button>
+        </aside>
+
+        <section class="main-workspace">
+            <header class="dashboard-hero">
+                <div class="hero-copy-block">
+                    <p class="eyebrow">SweatSync match room</p>
+                    <h1>Your next gym date could start here.</h1>
+                    <p>Browse curated profiles, start warm conversations, and shape the dating pace that fits your life.</p>
+                </div>
+                <div class="hero-stat-grid" aria-label="Profile summary">
+                    <span><strong id="matchCount">5</strong> matches</span>
+                    <span><strong id="sharedFocusCount">0</strong> shared focus</span>
+                    <span><strong id="distanceSummary">25</strong> miles</span>
+                </div>
+            </header>
+
+            <section id="matches-section" class="content-section active" aria-labelledby="matches-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Curated feed</p>
+                        <h2 id="matches-title">Your matches</h2>
+                    </div>
+                    <label class="filter-control" for="focusFilter">
+                        Filter by focus
+                        <select id="focusFilter">
+                            <option value="All">All focuses</option>
+                            <option value="Strength">Strength</option>
+                            <option value="Cardio">Cardio</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="CrossFit">CrossFit</option>
+                            <option value="Nutrition">Nutrition</option>
+                        </select>
+                    </label>
+                </div>
+                <div id="matchesGrid" class="matches-grid" aria-live="polite"></div>
+            </section>
+
+            <section id="messages-section" class="content-section" aria-labelledby="messages-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Inbox</p>
+                        <h2 id="messages-title">Messages</h2>
+                    </div>
+                </div>
+                <div id="messageThreads" class="message-list"></div>
+            </section>
+
+            <section id="profile-section" class="content-section" aria-labelledby="profile-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Your presence</p>
+                        <h2 id="profile-title">Profile editor</h2>
+                    </div>
+                </div>
+                <form id="profileForm" class="profile-editor">
+                    <div class="profile-card">
+                        <div>
+                            <label for="profileAlias">Alias</label>
+                            <input id="profileAlias" type="text" maxlength="40">
+                        </div>
+                        <div>
+                            <label for="profileBio">Bio</label>
+                            <textarea id="profileBio" rows="4" maxlength="220"></textarea>
+                        </div>
+                        <div>
+                            <span class="label-text">Training focus</span>
+                            <div id="profileFocusList" class="interest-row"></div>
+                        </div>
+                        <button type="submit" class="primary-action compact-action">Save profile</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="settings-section" class="content-section" aria-labelledby="settings-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Preferences</p>
+                        <h2 id="settings-title">Settings</h2>
+                    </div>
+                </div>
+                <div class="settings-grid">
+                    <label class="setting-row">
+                        <span>
+                            <strong>Profile visibility</strong>
+                            <small>Choose who can discover your profile.</small>
+                        </span>
+                        <select id="privacy">
+                            <option value="public">Public</option>
+                            <option value="matches">Matches only</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </label>
+                    <label class="setting-row toggle-row">
+                        <span>
+                            <strong>Verified badge</strong>
+                            <small>Show a verification badge on your profile.</small>
+                        </span>
+                        <input id="verifiedToggle" type="checkbox" checked>
+                    </label>
+                    <label class="setting-row">
+                        <span>
+                            <strong>Match distance</strong>
+                            <small id="distanceValue">25 miles</small>
+                        </span>
+                        <input id="distance" type="range" min="1" max="100" value="25">
+                    </label>
+                    <button id="resetProfileData" type="button" class="secondary-action">Reset profile</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div id="modal" class="modal-backdrop" hidden>
+        <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="icon-button modal-close" aria-label="Close dialog">X</button>
+            <div id="modalContent"></div>
+        </section>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

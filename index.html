@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SweatSync Dating connects fitness-minded people through shared goals, warm chemistry, and better dates">
+    <meta name="theme-color" content="#9c2f4a">
+    <title>SweatSync Dating - Find Your Fitness Match</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body class="auth-page">
+    <main class="auth-experience">
+        <section class="brand-stage" aria-labelledby="app-title">
+            <header class="brand-topline">
+                <a class="brand-lockup hero-brand" href="index.html" aria-label="SweatSync home">
+                    <span class="brand-mark" aria-hidden="true">
+                        <span class="plate"></span>
+                        <span class="bar"></span>
+                        <span class="heart"></span>
+                        <span class="bar"></span>
+                        <span class="plate"></span>
+                    </span>
+                    <span>
+                        <span class="eyebrow">Fitness dating</span>
+                        <strong>SweatSync</strong>
+                    </span>
+                </a>
+                <span class="access-badge">Early access</span>
+            </header>
+
+            <div class="hero-stack">
+                <p class="eyebrow">Gym romance starts here</p>
+                <h1 id="app-title">Find someone who keeps pace with your life.</h1>
+                <p>
+                    Meet people who understand training days, recovery days, shared goals,
+                    and the spark that starts between effort and ease.
+                </p>
+            </div>
+
+            <div class="chemistry-panel" aria-label="SweatSync highlights">
+                <div>
+                    <span class="mini-heart" aria-hidden="true"></span>
+                    <strong>Built around chemistry</strong>
+                    <p>Match by training style, dating pace, and the rituals that make connection feel natural.</p>
+                </div>
+                <div class="pulse-stats">
+                    <span><strong>5</strong> featured matches</span>
+                    <span><strong>4</strong> ways to connect</span>
+                    <span><strong>0</strong> pressure</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="entry-stage" aria-label="Create your SweatSync profile">
+            <form id="loginForm" class="profile-form entry-card">
+                <div class="form-heading">
+                    <span class="step-pill">Start matching</span>
+                    <h2>Create your fitness dating profile</h2>
+                    <p>Set your vibe, choose your training focus, and step into your match room.</p>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field-group">
+                        <label for="persona">Gym alias</label>
+                        <input type="text" id="persona" name="persona" placeholder="e.g. BenchBestie" maxlength="40" autocomplete="nickname" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="secretCode">Access code</label>
+                        <input type="password" id="secretCode" name="secretCode" placeholder="Enter your access code" maxlength="80" required>
+                    </div>
+                </div>
+
+                <fieldset class="field-group">
+                    <legend>Dating style</legend>
+                    <div class="option-grid">
+                        <label class="choice-card">
+                            <input type="radio" name="gymInterest" value="casual" required>
+                            <span>Casual spark</span>
+                            <small>Easy gym dates</small>
+                        </label>
+                        <label class="choice-card">
+                            <input type="radio" name="gymInterest" value="regular" required>
+                            <span>Regular chemistry</span>
+                            <small>Weekly workouts</small>
+                        </label>
+                        <label class="choice-card">
+                            <input type="radio" name="gymInterest" value="dedicated" required>
+                            <span>Dedicated duo</span>
+                            <small>Shared goals</small>
+                        </label>
+                        <label class="choice-card">
+                            <input type="radio" name="gymInterest" value="obsessed" required>
+                            <span>Gym soulmate</span>
+                            <small>All-in energy</small>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="field-group">
+                    <legend>Training focus</legend>
+                    <div class="chip-grid">
+                        <label><input type="checkbox" name="focus" value="Strength"> Strength</label>
+                        <label><input type="checkbox" name="focus" value="Cardio"> Cardio</label>
+                        <label><input type="checkbox" name="focus" value="Yoga"> Yoga</label>
+                        <label><input type="checkbox" name="focus" value="CrossFit"> CrossFit</label>
+                        <label><input type="checkbox" name="focus" value="Nutrition"> Nutrition</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="primary-action">Find my matches</button>
+                <div id="result" class="result-panel" hidden></div>
+            </form>
+        </section>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
